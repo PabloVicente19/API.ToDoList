@@ -1,3 +1,7 @@
+using API.ToDoList.Data;
+using API.ToDoList.Shared;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Inyeccion de dependencias
+
+// Inyeccion de DbContext
+builder.Services.AddDbContext<APITodoListContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("TodoListDb"));
+});
 
 var app = builder.Build();
 

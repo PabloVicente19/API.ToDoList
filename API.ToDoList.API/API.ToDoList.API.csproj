@@ -11,11 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="DTOs\UserDTOs\" />
     <Folder Include="Mappers\" />
     <Folder Include="Validations\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.ToDoList.Data\API.ToDoList.Data.csproj" />
+    <ProjectReference Include="..\API.ToDoList.Shared\API.ToDoList.Shared.csproj" />
   </ItemGroup>
 
 </Project>
